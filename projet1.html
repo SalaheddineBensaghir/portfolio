@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projet — Plateforme de gestion documentaire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Plateforme intelligente de gestion documentaire</h1>
+      <p>Application web de gestion des documents, signature électronique et workflow.</p>
+    </header>
+
+  <div class="card" style="margin-top:20px;padding:20px;">
+  <!-- CARROUSEL D'IMAGES -->
+  <div class="carousel" style="position:relative;overflow:hidden;border-radius:12px;margin-bottom:20px;">
+    <img src="Image2.png" alt="Aperçu projet" class="carousel-image" style="width:100%;display:block;border-radius:12px;">
+    <img src="Image3.png" alt="Aperçu projet 2" class="carousel-image" style="width:100%;display:none;border-radius:12px;">
+    <img src="Image4.png" alt="Aperçu projet 3" class="carousel-image" style="width:100%;display:none;border-radius:12px;">
+    
+    <!-- Boutons -->
+    <button class="prev" style="position:absolute;top:50%;left:10px;transform:translateY(-50%);background:rgba(0,0,0,0.4);border:none;color:#fff;padding:8px;border-radius:50%;cursor:pointer;">‹</button>
+    <button class="next" style="position:absolute;top:50%;right:10px;transform:translateY(-50%);background:rgba(0,0,0,0.4);border:none;color:#fff;padding:8px;border-radius:50%;cursor:pointer;">›</button>
+  </div>
+
+  <h3>Objectif du projet</h3>
+  <p style="color:var(--muted)">Créer une plateforme intelligente de gestion documentaire permettant le dépôt, la validation et la signature électronique des documents selon un circuit de validation configurable.</p>
+
+  <h3>Fonctionnalités principales</h3>
+  <ul style="color:var(--muted)">
+    <li>Upload, modification et suppression de documents (PDF/DOCX)</li>
+    <li>Workflow de validation multi-utilisateurs (ordre 1 → 2 → 3)</li>
+    <li>Signature électronique et vérification par OTP</li>
+    <li>Assistant IA pour la rédaction automatique</li>
+    <li>Paiement en ligne intégré (API externe)</li>
+  </ul>
+
+  <h3>Technologies utilisées</h3>
+  <div class="skills">
+    <div class="skill">Spring Boot (Microservices)</div>
+    <div class="skill">Angular Material</div>
+    <div class="skill">PostgreSQL</div>
+    <div class="skill">Keycloak / JWT</div>
+    <div class="skill">Docker / REST API</div>
+  </div>
+
+  <div style="text-align:center;margin-top:30px;">
+    <a href="index.html" class="cta email">⬅ Retour au portfolio</a>
+  </div>
+</div>
+
+<script>
+  // CARROUSEL SIMPLE
+  const slides = document.querySelectorAll('.carousel-image');
+  let current = 0;
+
+  const showSlide = (index) => {
+    slides.forEach((slide, i) => slide.style.display = (i === index ? 'block' : 'none'));
+  }
+
+  document.querySelector('.prev').addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  document.querySelector('.next').addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current);
+</script>
+
+
+    <footer>
+      <div>© 2025 Salaheddine BEN SAGHIR — Portfolio professionnel</div>
+    </footer>
+  </div>
+</body>
+</html>

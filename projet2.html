@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projet — Plateforme de gestion documentaire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Projet ERP — Microsoft Dynamics 365 Business Central</h1>
+      <p> ERP complet avec Microsoft Dynamics 365 Business Central pour centraliser, automatiser et sécuriser les processus financiers, commerciaux et logistiques de l’entreprise, avec reporting et BI en temps réel.</p>
+    </header>
+
+  <div class="card" style="margin-top:20px;padding:20px;">
+  <!-- CARROUSEL D'IMAGES -->
+  <div class="carousel" style="position:relative;overflow:hidden;border-radius:12px;margin-bottom:20px;">
+    <img src="Capture d’écran 2025-10-12 172110.png" alt="Aperçu projet" class="carousel-image" style="width:100%;display:block;border-radius:12px;">
+    <!-- <img src="Image3.png" alt="Aperçu projet 2" class="carousel-image" style="width:100%;display:none;border-radius:12px;">
+    <img src="Image4.png" alt="Aperçu projet 3" class="carousel-image" style="width:100%;display:none;border-radius:12px;"> -->
+    
+    <!-- Boutons -->
+    <button class="prev" style="position:absolute;top:50%;left:10px;transform:translateY(-50%);background:rgba(0,0,0,0.4);border:none;color:#fff;padding:8px;border-radius:50%;cursor:pointer;">‹</button>
+    <button class="next" style="position:absolute;top:50%;right:10px;transform:translateY(-50%);background:rgba(0,0,0,0.4);border:none;color:#fff;padding:8px;border-radius:50%;cursor:pointer;">›</button>
+  </div>
+
+  <h3>Objectif du projet</h3>
+  <p style="color:var(--muted)">Mise en place d’un système ERP complet pour la gestion des processus métiers d’une entreprise, en utilisant Microsoft Dynamics 365 Business Central. Le projet a pour objectif d’optimiser la planification, le suivi et le contrôle des opérations commerciales, financières et logistiques, tout en facilitant la prise de décision grâce à la Business Intelligence intégrée.</p>
+
+  <h3>Fonctionnalités principales</h3>
+  <ul style="color:var(--muted)">
+    <li>Centraliser les informations financières, commerciales et logistiques dans une seule plateforme.</li>
+    <li>Automatiser les processus métiers critiques pour réduire les erreurs et gagner en productivité.</li>
+    <li>Permettre un accès en temps réel aux données pour améliorer la prise de décision.</li>
+    <li>Assurer l’intégration avec d’autres solutions Microsoft (Power Platform, Office 365, Azure).</li>
+  </ul>
+
+  <h3>Technologies utilisées</h3>
+  <div class="skills">
+    <div class="skill">Microsoft Dynamics 365 Business Central (C/AL → AL)</div>
+    <div class="skill">Azure Cloud & Active Directory</div>
+    <div class="skill">SSIS, SSAS, SSRS pour la BI</div>
+    <div class="skill">Git pour le versioning et suivi des développements</div>
+    <div class="skill">REST/SOAP Web Services pour intégration avec d’autres systèmes</div>
+  </div>
+
+  <div style="text-align:center;margin-top:30px;">
+    <a href="index.html" class="cta email">⬅ Retour au portfolio</a>
+  </div>
+</div>
+
+<script>
+  // CARROUSEL SIMPLE
+  const slides = document.querySelectorAll('.carousel-image');
+  let current = 0;
+
+  const showSlide = (index) => {
+    slides.forEach((slide, i) => slide.style.display = (i === index ? 'block' : 'none'));
+  }
+
+  document.querySelector('.prev').addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  document.querySelector('.next').addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current);
+</script>
+
+
+    <footer>
+      <div>© 2025 Salaheddine BEN SAGHIR — Portfolio professionnel</div>
+    </footer>
+  </div>
+</body>
+</html>
