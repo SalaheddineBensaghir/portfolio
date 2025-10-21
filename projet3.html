@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projet — Plateforme de gestion documentaire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Plateforme de Gestion des Ressources Humaines (GRH)</h1>
+      <p>Application web de Gestion Ressource humaines .</p>
+    </header>
+
+<div class="card" style="margin-top:15px;padding:15px;">
+  <!-- CARROUSEL D'IMAGES -->
+  <div class="carousel" style="position:relative;overflow:hidden;border-radius:12px;margin-bottom:20px;height:70vh;max-height:650px;">
+    <img src="GRH 3.jpg" alt="Aperçu projet" class="carousel-image" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;transition:opacity 0.6s ease;">
+    <img src="projetrh2.png" alt="Aperçu projet 2" class="carousel-image" style="width:100%;height:100%;object-fit:cover;display:none;border-radius:12px;transition:opacity 0.6s ease;">
+    <img src="projetRh3.png" alt="Aperçu projet 3" class="carousel-image" style="width:100%;height:100%;object-fit:cover;display:none;border-radius:12px;transition:opacity 0.6s ease;">
+    <img src="projetRh4.png" alt="Aperçu projet 4" class="carousel-image" style="width:100%;height:100%;object-fit:cover;display:none;border-radius:12px;transition:opacity 0.6s ease;">
+    <img src="projetRh5.png" alt="Aperçu projet 5" class="carousel-image" style="width:100%;height:100%;object-fit:cover;display:none;border-radius:12px;transition:opacity 0.6s ease;">
+    <img src="projetRh6.png" alt="Aperçu projet 6" class="carousel-image" style="width:100%;height:100%;object-fit:cover;display:none;border-radius:12px;transition:opacity 0.6s ease;">
+    <img src="projetRh7.png" alt="Aperçu projet 7" class="carousel-image" style="width:100%;height:100%;object-fit:cover;display:none;border-radius:12px;transition:opacity 0.6s ease;">
+    <img src="projetRh8.png" alt="Aperçu projet 8" class="carousel-image" style="width:100%;height:100%;object-fit:cover;display:none;border-radius:12px;transition:opacity 0.6s ease;">
+    <img src="projetRh9.png" alt="Aperçu projet 9" class="carousel-image" style="width:100%;height:100%;object-fit:cover;display:none;border-radius:12px;transition:opacity 0.6s ease;">
+
+    <!-- Boutons -->
+    <button class="prev" style="position:absolute;top:50%;left:15px;transform:translateY(-50%);background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:24px;padding:10px 14px;border-radius:50%;cursor:pointer;z-index:10;">‹</button>
+    <button class="next" style="position:absolute;top:50%;right:15px;transform:translateY(-50%);background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:24px;padding:10px 14px;border-radius:50%;cursor:pointer;z-index:10;">›</button>
+  </div>
+
+  <h3>Objectif du projet</h3>
+  <p style="color:var(--muted)">La gestion du temps de travail et des congés constitue un enjeu majeur pour les entreprises, tant sur le plan légal qu’opérationnel. Le suivi précis des heures de présence des salariés, via des systèmes de pointage automatisés, permet de garantir la conformité aux obligations légales tout en optimisant l’organisation interne. Parallèlement, la gestion des congés et des absences assure le respect des droits des employés et une planification efficace des ressources. Ce projet vise à développer une plateforme intégrée de gestion des ressources humaines, centralisant le pointage, le suivi des congés et la génération de rapports, afin de simplifier les processus RH, sécuriser la conformité légale et améliorer l’efficacité globale de l’entreprise.
+</p>
+
+  <h3>Fonctionnalités principales</h3>
+  <ul style="color:var(--muted)">
+    <li>Permettre aux salariés de soumettre en ligne leurs demandes de congés, d’absences ou de missions à leur hiérarchie.</li>
+    <li>Offrir aux responsables la possibilité de valider ou refuser les demandes des collaborateurs directement via la plateforme.</li>
+    <li>Fournir une vision claire des indicateurs relatifs au temps de travail et aux données sociales associées.</li>
+      <li>Optimiser la gestion des congés, en facilitant le suivi et la planification des absences.</li>
+    <li>Mettre à disposition des responsables, en temps réel, des informations sur les absences non justifiées, retards répétés et autres anomalies..</li>
+</li>
+    <!-- <li>Paiement en ligne intégré (API externe)</li> -->
+  </ul>
+
+  <h3>Technologies utilisées</h3>
+  <div class="skills">
+    <div class="skill">PHP (Native)</div>
+    <div class="skill">Angular Material</div>
+    <div class="skill">Mysql</div>
+    <div class="skill">cPanel (Hebergement)</div>
+    <div class="skill"> REST API</div>
+  </div>
+
+  <div style="text-align:center;margin-top:30px;">
+    <a href="index.html" class="cta email">⬅ Retour au portfolio</a>
+  </div>
+</div>
+
+<script>
+  // CARROUSEL SIMPLE
+  const slides = document.querySelectorAll('.carousel-image');
+  let current = 0;
+
+  const showSlide = (index) => {
+    slides.forEach((slide, i) => slide.style.display = (i === index ? 'block' : 'none'));
+  }
+
+  document.querySelector('.prev').addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  document.querySelector('.next').addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current);
+</script>
+
+
+    <footer>
+      <div>© 2025 Salaheddine BEN SAGHIR — Portfolio professionnel</div>
+    </footer>
+  </div>
+</body>
+</html>
