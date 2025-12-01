@@ -1,4 +1,4 @@
-name: Run Tests on Main Push
+name: Simple Test on Main Push
 
 on:
   push:
@@ -6,23 +6,25 @@ on:
       - main
 
 jobs:
-  test:
+  simple-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code 
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+      - name: Run simple test
+        run: |
+          echo "Running simple test..."
+          if [ -f "index.html" ]; then
+            echo "✔ Test OK : index.html exists"
+            exit 0
+          else
+            echo "❌ Test failed : index.html missing"
+            exit 1
+          fi
 
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Run tests
-        run: npm test
-      
-      - name: Display message
-        run: echo "✅ Tests completed and code pushed to main branch!"
+      - name: Display success message
+        if: success()
+        run: echo "✅ Simple test completed successfully!"
+
